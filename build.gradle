@@ -47,11 +47,14 @@ test {
     useJUnitPlatform()
 }
 
-
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlin_version}"
+
+    // CORRECT http4k setup: Add the core library AND the server implementation
+    implementation "org.http4k:http4k-core:${http4k_version}"
     implementation "org.http4k:http4k-server-netty:${http4k_version}"
-    
+
+    // Your other dependencies, updated
     def kotlinxHtmlVersion = "0.11.0"
     implementation("org.jetbrains.kotlinx:kotlinx-html-jvm:$kotlinxHtmlVersion")
     implementation("org.jetbrains.kotlinx:kotlinx-html:$kotlinxHtmlVersion")
@@ -61,7 +64,8 @@ dependencies {
     implementation "org.ktorm:ktorm-support-sqlite:${ktormVersion}"
     implementation "org.xerial:sqlite-jdbc:3.46.0.0"
 
-    testImplementation "org.http4k:http4k-hamkrest:${http4k_version}"
+    // Test dependencies
+    testImplementation "org.http4k:http4k-testing-hamkrest:${http4k_version}"
     testImplementation "org.junit.jupiter:junit-jupiter-api:${junit_version}"
     testImplementation "org.junit.jupiter:junit-jupiter-engine:${junit_version}"
 }
