@@ -38,7 +38,7 @@ jobs:
           FOD_CLIENT_ID: ${{secrets.FOD_CLIENT_ID}}
           FOD_CLIENT_SECRET: ${{secrets.FOD_CLIENT_SECRET}}
           FOD_RELEASE: ${{secrets.FOD_RELEASE_ID}}
-          EXTRA_PACKAGE_OPTS: -bt gradle -bf guild.gradle -oss
+          EXTRA_PACKAGE_OPTS: -bt gradle -bf build.gradle -oss
           DO_WAIT: true
           DO_EXPORT: true
           DO_PACKAGE_DEBUG: true
