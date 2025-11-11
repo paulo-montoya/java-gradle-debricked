@@ -29,7 +29,7 @@ jobs:
 
       # Perform Fortify on Demand SAST + SCA scan and import SAST results into GitHub code scanning alerts
       - name: Run FoD SAST Scan
-        uses: fortify/github-action@v1
+        uses: fortify/github-action@v2
         with:
           sast-scan: true
         env:
@@ -38,6 +38,7 @@ jobs:
           FOD_CLIENT_ID: ${{secrets.FOD_CLIENT_ID}}
           FOD_CLIENT_SECRET: ${{secrets.FOD_CLIENT_SECRET}}
           FOD_RELEASE: ${{secrets.FOD_RELEASE_ID}}
+          SC_CLIENT_VERSION: 25.2.0
           EXTRA_PACKAGE_OPTS: -bt gradle -bf build.gradle -oss
           DO_WAIT: true
           DO_EXPORT: true
