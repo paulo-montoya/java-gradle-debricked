@@ -39,7 +39,7 @@ jobs:
           FOD_CLIENT_SECRET: ${{secrets.FOD_CLIENT_SECRET}}
           FOD_RELEASE: ${{secrets.FOD_RELEASE_ID}}
           SC_CLIENT_VERSION: 25.2.0
-          EXTRA_PACKAGE_OPTS: -skipBuild -bt gradle -bf build.gradle -oss
+          EXTRA_PACKAGE_OPTS: -bt gradle -bf build.gradle -oss
           DO_WAIT: true
           DO_EXPORT: true
           DO_PACKAGE_DEBUG: true
