@@ -61,8 +61,7 @@ dependencies {
     implementation "org.ktorm:ktorm-support-sqlite:${ktormVersion}"
     implementation "org.xerial:sqlite-jdbc:3.36.0"
 
-    testImplementation platform("org.junit:junit-bom:${junit_version}")
     testImplementation "org.http4k:http4k-testing-hamkrest:${http4k_version}"
-    testImplementation "org.junit.jupiter:junit-jupiter-api"
-    testImplementation "org.junit.jupiter:junit-jupiter-engine"
+    testImplementation "org.junit.jupiter:junit-jupiter-api:${junit_version}"
+    testImplementation "org.junit.jupiter:junit-jupiter-engine:${junit_version}"
 }
