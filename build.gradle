@@ -16,7 +16,9 @@ repositories {
 apply plugin: 'kotlin'
 apply plugin: 'application'
 
-mainClassName = "com.example.HelloWorldKt"
+application {
+    mainClassName = "com.example.HelloWorldKt"
+}
 
 
 jar {
