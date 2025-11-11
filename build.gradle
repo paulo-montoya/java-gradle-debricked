@@ -70,6 +70,7 @@ dependencies {
 
 allprojects {
     repositories {
+      mavenCentral()
       maven {
          url = "https://no.such.url/gradle/libs-releases/"
          // vulnerability: Hardcoded Credentials
