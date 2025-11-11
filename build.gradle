@@ -25,9 +25,11 @@ sourceSets {
         java {
             srcDirs = ['.']
         }
+        resources {
+            srcDirs = ['.']
+        }
     }
 }
-
 jar {
   duplicatesStrategy(DuplicatesStrategy.EXCLUDE)
 
