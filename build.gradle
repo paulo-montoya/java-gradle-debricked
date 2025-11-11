@@ -21,7 +21,11 @@ application {
 }
 
 sourceSets {
-    main.kotlin.srcDirs += '.'
+    main {
+        kotlin {
+            srcDirs = ['.']
+        }
+    }
 }
 
 jar {
