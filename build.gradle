@@ -1,0 +1,72 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        gradlePluginPortal()
+    }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlin_version}"
+        classpath "io.shiftleft:gather-dependencies:0.7"
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+apply plugin: 'kotlin'
+apply plugin: 'application'
+apply plugin: 'io.shiftleft.gather-dependencies'
+
+mainClassName = "com.example.HelloWorldKt"
+
+
+jar {
+  duplicatesStrategy(DuplicatesStrategy.EXCLUDE)
+
+    manifest {
+        attributes "Main-Class": "com.example.HelloWorldKt"
+    }
+
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
+
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlin_version}"
+    implementation platform("org.http4k:http4k-bom:${http4k_version}")
+    implementation "org.http4k:http4k-core"
+
+    def kotlinxHtmlVersion = "0.7.5"
+    implementation("org.jetbrains.kotlinx:kotlinx-html-jvm:$kotlinxHtmlVersion")
+    implementation("org.jetbrains.kotlinx:kotlinx-html:$kotlinxHtmlVersion")
+
+    def ktormVersion = '3.2.0'
+    implementation "org.ktorm:ktorm-core:${ktormVersion}"
+    implementation "org.ktorm:ktorm-support-sqlite:${ktormVersion}"
+    implementation "org.xerial:sqlite-jdbc:3.36.0"
+
+    testImplementation platform("org.junit:junit-bom:${junit_version}")
+    testImplementation "org.http4k:http4k-testing-hamkrest"
+    testImplementation "org.junit.jupiter:junit-jupiter-api"
+    testImplementation "org.junit.jupiter:junit-jupiter-engine"
+}
+
+allprojects {
+    repositories {
+      maven {
+         url = "https://no.such.url/gradle/libs-releases/"
+         // vulnerability: Hardcoded Credentials
+         credentials {
+              username = "barnabyjack"
+              password = "PhitiTeeLiethi0eephi"
+         }
+      }
+    }
+}
