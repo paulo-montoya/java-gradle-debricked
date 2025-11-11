@@ -23,13 +23,14 @@ application {
 sourceSets {
     main {
         java {
-            srcDirs = ['.']
+            srcDirs = ['src']
         }
         resources {
-            srcDirs = ['.']
+            srcDirs = ['src']
         }
     }
 }
+
 jar {
   duplicatesStrategy(DuplicatesStrategy.EXCLUDE)
 
