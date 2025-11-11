@@ -50,9 +50,8 @@ test {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlin_version}"
-    implementation platform("org.http4k:http4k-bom:${http4k_version}")
-    implementation "org.http4k:http4k-core"
-
+    implementation "org.http4k:http4k-core:${http4k_version}"
+    
     def kotlinxHtmlVersion = "0.7.5"
     implementation("org.jetbrains.kotlinx:kotlinx-html-jvm:$kotlinxHtmlVersion")
     implementation("org.jetbrains.kotlinx:kotlinx-html:$kotlinxHtmlVersion")
@@ -63,7 +62,7 @@ dependencies {
     implementation "org.xerial:sqlite-jdbc:3.36.0"
 
     testImplementation platform("org.junit:junit-bom:${junit_version}")
-    testImplementation "org.http4k:http4k-testing-hamkrest"
+    testImplementation "org.http4k:http4k-testing-hamkrest:${http4k_version}"
     testImplementation "org.junit.jupiter:junit-jupiter-api"
     testImplementation "org.junit.jupiter:junit-jupiter-engine"
 }
