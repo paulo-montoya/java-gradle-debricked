@@ -22,7 +22,7 @@ application {
 
 sourceSets {
     main {
-        kotlin {
+        java {
             srcDirs = ['.']
         }
     }
