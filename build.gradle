@@ -20,6 +20,9 @@ application {
     mainClass = "com.example.HelloWorldKt"
 }
 
+sourceSets {
+    main.kotlin.srcDirs += '.'
+}
 
 jar {
   duplicatesStrategy(DuplicatesStrategy.EXCLUDE)
